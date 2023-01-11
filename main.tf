@@ -8,7 +8,7 @@ provider "aws" {
 
 resource "aws_instance" "ec2_instance_example" {
   ami           = "ami-0abe92d15a280b758"
-  instance_type = "t2.micro"
+  instance_type = "m5.4xlarge"
 
   tags = {
     Name = "example-instance"
@@ -21,8 +21,8 @@ resource "aws_s3_bucket" "s3_example_bucket" {
 
 resource "aws_db_instance" "rds_example" {
   engine                  = "postgres"
-  instance_class          = "db.t2.micro"
-  name                    = "example-db"
+  instance_class          = "db.m5.8xlarge"
+  db_name                 = "example-db"
   allocated_storage       = 20
   storage_type            = "gp2"
  
